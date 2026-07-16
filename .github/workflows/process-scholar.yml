@@ -1,0 +1,73 @@
+name: Process Scholar URL
+
+on:
+  workflow_dispatch:
+    inputs:
+      scholar_url:
+        description: Scholar item-page URL
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scholar2podcast-publisher
+  cancel-in-progress: false
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      SCHOLAR_URL: ${{ inputs.scholar_url }}
+      SCHOLAR2PODCAST_BASE_URL: https://dzwnwyst4z-web.github.io/Scholar2Podcast/
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install application
+        run: python -m pip install .
+
+      - name: Validate Scholar URL
+        run: |
+          python - <<'PY'
+          import os
+          from urllib.parse import urlparse
+
+          parsed = urlparse(os.environ["SCHOLAR_URL"])
+          if parsed.scheme != "https" or not parsed.hostname or not parsed.hostname.endswith(".edu"):
+              raise SystemExit("Only HTTPS URLs on .edu domains are accepted.")
+          PY
+
+      - name: Process episode
+        run: scholar2podcast "$SCHOLAR_URL" --delete-video
+
+      - name: Commit published files
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add episodes feed.xml index.html
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Publish Scholar episode"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Summary
+        run: |
+          echo "## Scholar2Podcast" >> "$GITHUB_STEP_SUMMARY"
+          echo "Processing completed for: $SCHOLAR_URL" >> "$GITHUB_STEP_SUMMARY"
+          echo "Published changes: ${{ steps.commit.outputs.changed }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Feed: https://dzwnwyst4z-web.github.io/Scholar2Podcast/feed.xml" >> "$GITHUB_STEP_SUMMARY"
+

@@ -119,3 +119,17 @@ def save_metadata(metadata: EpisodeMetadata, episode_path: Path) -> Path:
         raise MetadataError(f"Could not save episode metadata: {exc}") from exc
     return destination
 
+
+def find_episode_by_source_url(episodes_dir: Path, source_url: str) -> Path | None:
+    """Return an existing episode sidecar for a previously processed URL."""
+
+    wanted = source_url.rstrip("/")
+    for sidecar in episodes_dir.glob("*.json"):
+        try:
+            payload = json.loads(sidecar.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise MetadataError(f"Could not inspect episode metadata {sidecar}: {exc}") from exc
+        stored_url = str(payload.get("source_url") or "").rstrip("/")
+        if stored_url == wanted:
+            return sidecar
+    return None

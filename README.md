@@ -77,6 +77,18 @@ The included `.nojekyll` file makes GitHub Pages serve the generated files
 without running Jekyll. Episode MP3 and JSON files are tracked so Pages can
 publish them; original videos in `downloads/` remain local and ignored.
 
+### Cloud processing for iPhone Shortcuts
+
+The `Process Scholar URL` GitHub Actions workflow accepts a Scholar page URL
+and performs the complete workflow on a GitHub runner. It validates that the
+input is an HTTPS `.edu` URL, prevents duplicate episodes, installs the package,
+downloads and converts the lecture, deletes the source video, regenerates the
+RSS and landing page, and commits the published files.
+
+Run it manually from the repository's **Actions** tab before connecting an
+iPhone Shortcut. The Shortcut will eventually call the same workflow-dispatch
+API with a narrowly scoped GitHub token.
+
 Existing files are not overwritten unless `--overwrite` is supplied.
 
 ### Test

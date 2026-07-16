@@ -11,7 +11,12 @@ from urllib.parse import urlparse
 from scholar2podcast.converter import AudioConversionError, convert_to_mp3
 from scholar2podcast.downloader import ScholarDownloadError, download_scholar_media
 from scholar2podcast.feed import FeedError, generate_feed
-from scholar2podcast.metadata import MetadataError, save_metadata
+from scholar2podcast.metadata import (
+    MetadataError,
+    find_episode_by_source_url,
+    save_metadata,
+)
+from scholar2podcast.site import generate_index
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -46,6 +51,17 @@ def build_parser() -> argparse.ArgumentParser:
         default=os.environ.get("SCHOLAR2PODCAST_BASE_URL", "http://localhost:8000/"),
         help="public URL serving feed.xml and episodes/ (default: local test server)",
     )
+    parser.add_argument(
+        "--index-path",
+        type=Path,
+        default=Path("index.html"),
+        help="landing-page destination (default: ./index.html)",
+    )
+    parser.add_argument(
+        "--delete-video",
+        action="store_true",
+        help="delete the downloaded source video after successful publishing",
+    )
     return parser
 
 
@@ -56,8 +72,13 @@ def main(argv: list[str] | None = None) -> int:
         print("error: URL must be a complete http:// or https:// URL", file=sys.stderr)
         return 2
 
-    print(f"Fetching Scholar page: {args.url}")
     try:
+        existing = find_episode_by_source_url(args.episodes_dir, args.url)
+        if existing and not args.overwrite:
+            print(f"Episode already published: {existing}")
+            return 0
+
+        print(f"Fetching Scholar page: {args.url}")
         result = download_scholar_media(
             args.url, args.output_dir, overwrite=args.overwrite
         )
@@ -75,6 +96,9 @@ def main(argv: list[str] | None = None) -> int:
         )
         metadata_path = save_metadata(result.metadata, episode.path)
         feed_path = generate_feed(args.episodes_dir, args.feed_path, args.base_url)
+        index_path = generate_index(args.episodes_dir, args.index_path)
+        if args.delete_video:
+            result.path.unlink(missing_ok=True)
     except (ScholarDownloadError, AudioConversionError, MetadataError, FeedError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
@@ -82,4 +106,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Saved episode: {episode.path} ({episode.bytes_written / 1_048_576:.1f} MB)")
     print(f"Saved metadata: {metadata_path}")
     print(f"Updated feed: {feed_path}")
+    print(f"Updated landing page: {index_path}")
+    if args.delete_video:
+        print(f"Deleted source video: {result.path}")
     return 0

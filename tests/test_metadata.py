@@ -11,6 +11,7 @@ from scholar2podcast.metadata import (
     EpisodeMetadata,
     MetadataError,
     extract_metadata,
+    find_episode_by_source_url,
     save_metadata,
 )
 
@@ -60,7 +61,18 @@ class SaveMetadataTests(unittest.TestCase):
         self.assertEqual(payload["audio_file"], "Lecture One.mp3")
         self.assertEqual(payload["publication_date"], "2018-11-21")
 
+    def test_finds_an_existing_source_url(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_dir:
+            root = Path(temporary_dir)
+            sidecar = root / "episode.json"
+            sidecar.write_text(
+                json.dumps({"source_url": "https://example.edu/item/1/"}),
+                encoding="utf-8",
+            )
+            found = find_episode_by_source_url(root, "https://example.edu/item/1")
+        self.assertEqual(found, sidecar)
+
+
 
 if __name__ == "__main__":
     unittest.main()
-
