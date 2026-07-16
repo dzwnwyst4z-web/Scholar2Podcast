@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>Scholar2Podcast</title>
+    <link>https://dzwnwyst4z-web.github.io/Scholar2Podcast/</link>
+    <description>A private podcast of lectures from Scholar.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Jul 2026 17:08:38 +0000</lastBuildDate>
+    <atom:link href="https://dzwnwyst4z-web.github.io/Scholar2Podcast/feed.xml" rel="self" type="application/rss+xml" />
+    <itunes:author>Scholar2Podcast</itunes:author>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:category text="Education" />
+    <item>
+      <title>The Bible, Theology, and the Christ Figures in Film Session 4: Christ - Figure Films Part 2</title>
+      <link>https://scholar.csl.edu/bible_film_christ_figures/8/</link>
+      <description>Dr. Lewis discusses the mind of Christ in movies such as "Angel and the Badman" and "It's a Womderful Life".</description>
+      <content:encoded>Dr. Lewis discusses the mind of Christ in movies such as "Angel and the Badman" and "It's a Womderful Life".</content:encoded>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">35f0e885-1297-5600-a504-a01fbe5d549e</guid>
+      <itunes:author>Lewis, David</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://dzwnwyst4z-web.github.io/Scholar2Podcast/episodes/The%20Bible%2C%20Theology%2C%20and%20the%20Christ%20Figures%20in%20Film%20Session%204%20-%20Christ%20-%20Figure%20Films%20Part%202.mp3" length="29746588" type="audio/mpeg" />
+    </item>
+  </channel>
+</rss>

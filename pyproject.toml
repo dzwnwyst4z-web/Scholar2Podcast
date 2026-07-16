@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scholar2podcast"
+version = "0.1.0"
+description = "Download media from Scholar/Digital Commons pages for a private podcast"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.12,<5",
+    "requests>=2.31,<3",
+]
+
+[project.scripts]
+scholar2podcast = "scholar2podcast.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
