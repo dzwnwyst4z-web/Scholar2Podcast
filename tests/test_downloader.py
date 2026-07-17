@@ -36,6 +36,17 @@ class DiscoverDownloadUrlTests(unittest.TestCase):
         found = discover_download_url(html, "https://example.edu/items/8/")
         self.assertEqual(found, "https://example.edu/items/8/files/lecture.mp4")
 
+    def test_prefers_native_video_over_additional_attachment(self) -> None:
+        html = """
+        <a href="/context/collection/article/1000/type/native/viewcontent">Download</a>
+        <a href="/cgi/viewcontent.cgi?filename=0&amp;article=1000&amp;context=collection&amp;type=additional">Download</a>
+        """
+        found = discover_download_url(html, "https://example.edu/collection/1/")
+        self.assertEqual(
+            found,
+            "https://example.edu/context/collection/article/1000/type/native/viewcontent",
+        )
+
     def test_raises_friendly_error_when_no_link_exists(self) -> None:
         with self.assertRaisesRegex(ScholarDownloadError, "No downloadable"):
             discover_download_url("<p>No media here</p>", "https://example.edu/item/1/")

@@ -72,6 +72,10 @@ def discover_download_url(page_html: str, page_url: str) -> str:
         score = 0
         if "viewcontent.cgi" in absolute_url.lower():
             score += 100
+        if "/type/native/" in absolute_url.lower():
+            score += 200
+        if "type=additional" in absolute_url.lower() or "/type/additional/" in absolute_url.lower():
+            score -= 200
         if "download" in searchable:
             score += 60
         if "/download" in urlparse(absolute_url).path.lower():
@@ -178,6 +182,15 @@ def download_scholar_media(
         media_response.raise_for_status()
     except requests.RequestException as exc:
         raise ScholarDownloadError(f"Network request failed: {exc}") from exc
+
+    content_type = media_response.headers.get("Content-Type", "").split(";", 1)[0].lower()
+    if content_type and not (
+        content_type.startswith("video/") or content_type.startswith("audio/")
+    ):
+        media_response.close()
+        raise ScholarDownloadError(
+            f"Discovered download is not audio or video (Content-Type: {content_type})."
+        )
 
     output_dir.mkdir(parents=True, exist_ok=True)
     filename = _filename_from_response(media_response, _page_stem(page_url))
