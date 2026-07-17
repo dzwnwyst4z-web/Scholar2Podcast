@@ -5,12 +5,23 @@
     <link>https://dzwnwyst4z-web.github.io/Scholar2Podcast/</link>
     <description>A private podcast of lectures from Scholar.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jul 2026 21:52:29 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 16:02:23 +0000</lastBuildDate>
     <atom:link href="https://dzwnwyst4z-web.github.io/Scholar2Podcast/feed.xml" rel="self" type="application/rss+xml" />
     <itunes:author>Scholar2Podcast</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
     <itunes:category text="Education" />
+    <item>
+      <title>The Bible, Theology, and the Christ Figures in Film Session 1: Film Theory Part 1</title>
+      <link>https://scholar.csl.edu/bible_film_christ_figures/1/</link>
+      <description>Dr. Lewis explains film as art and how it can shpe our opinions.</description>
+      <content:encoded>Dr. Lewis explains film as art and how it can shpe our opinions.</content:encoded>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">8b0ec3c8-fed0-5ea8-bb6d-118afbd08d2f</guid>
+      <itunes:author>Lewis, David</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://dzwnwyst4z-web.github.io/Scholar2Podcast/episodes/The%20Bible%2C%20Theology%2C%20and%20the%20Christ%20Figures%20in%20Film%20Session%201%20-%20Film%20Theory%20Part%201.mp3" length="54805695" type="audio/mpeg" />
+    </item>
     <item>
       <title>The Bible, Theology, and the Christ Figures in Film Session 4: Christ - Figure Films Part 2</title>
       <link>https://scholar.csl.edu/bible_film_christ_figures/8/</link>
