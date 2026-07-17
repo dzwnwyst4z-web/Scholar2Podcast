@@ -5,7 +5,7 @@
     <link>https://dzwnwyst4z-web.github.io/Scholar2Podcast/</link>
     <description>A private podcast of lectures from Scholar.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Jul 2026 18:27:55 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 18:31:00 +0000</lastBuildDate>
     <atom:link href="https://dzwnwyst4z-web.github.io/Scholar2Podcast/feed.xml" rel="self" type="application/rss+xml" />
     <itunes:author>Scholar2Podcast</itunes:author>
     <itunes:explicit>false</itunes:explicit>
@@ -43,6 +43,17 @@
       <itunes:author>Lewis, David</itunes:author>
       <itunes:explicit>false</itunes:explicit>
       <enclosure url="https://dzwnwyst4z-web.github.io/Scholar2Podcast/episodes/The%20Bible%2C%20Theology%2C%20and%20the%20Christ%20Figures%20in%20Film%20Session%202%20-%20Jesus%20Films%20Part%201.mp3" length="44794800" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>The Bible, Theology, and the Christ Figures in Film Session 3: Jesus Films Part 2 continued</title>
+      <link>https://scholar.csl.edu/bible_film_christ_figures/6/</link>
+      <description>Dr. Lewis continues his critique of the Movie "Ben Hur".</description>
+      <content:encoded>Dr. Lewis continues his critique of the Movie "Ben Hur".</content:encoded>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">b64c0def-851d-56ee-92c4-db9e61144fbb</guid>
+      <itunes:author>Lewis, David</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://dzwnwyst4z-web.github.io/Scholar2Podcast/episodes/The%20Bible%2C%20Theology%2C%20and%20the%20Christ%20Figures%20in%20Film%20Session%203%20-%20Jesus%20Films%20Part%202%20continued.mp3" length="28316698" type="audio/mpeg" />
     </item>
     <item>
       <title>The Bible, Theology, and the Christ Figures in Film Session 4: Christ - Figure Films Part 2</title>
