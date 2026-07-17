@@ -5,7 +5,7 @@
     <link>https://dzwnwyst4z-web.github.io/Scholar2Podcast/</link>
     <description>A private podcast of lectures from Scholar.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Jul 2026 21:12:59 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 22:36:55 +0000</lastBuildDate>
     <atom:link href="https://dzwnwyst4z-web.github.io/Scholar2Podcast/feed.xml" rel="self" type="application/rss+xml" />
     <itunes:author>Scholar2Podcast</itunes:author>
     <itunes:explicit>false</itunes:explicit>
@@ -65,6 +65,17 @@
       <itunes:author>Lewis, David</itunes:author>
       <itunes:explicit>false</itunes:explicit>
       <enclosure url="https://dzwnwyst4z-web.github.io/Scholar2Podcast/episodes/The%20Bible%2C%20Theology%2C%20and%20the%20Christ%20Figures%20in%20Film%20Session%203%20-%20Jesus%20Films%20Part%202%20continued.mp3" length="28316698" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>The Bible, Theology, and the Christ Figures in Film Session 3: Jesus Films Part 2</title>
+      <link>https://scholar.csl.edu/bible_film_christ_figures/5/</link>
+      <description>Dr. Lewis compares the movies of "Ben Hur" and "King of Kings" for the way in which they treat the message of Christ and the person.</description>
+      <content:encoded>Dr. Lewis compares the movies of "Ben Hur" and "King of Kings" for the way in which they treat the message of Christ and the person.</content:encoded>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">44831388-aa3a-5b14-aff1-01917c7dfd2e</guid>
+      <itunes:author>Lewis, David</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://dzwnwyst4z-web.github.io/Scholar2Podcast/episodes/The%20Bible%2C%20Theology%2C%20and%20the%20Christ%20Figures%20in%20Film%20Session%203%20-%20Jesus%20Films%20Part%202.mp3" length="39342110" type="audio/mpeg" />
     </item>
     <item>
       <title>The Bible, Theology, and the Christ Figures in Film Session 4: Christ - Figure Films Part 2</title>
