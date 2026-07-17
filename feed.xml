@@ -5,7 +5,7 @@
     <link>https://dzwnwyst4z-web.github.io/Scholar2Podcast/</link>
     <description>A private podcast of lectures from Scholar.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Jul 2026 18:31:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 21:12:59 +0000</lastBuildDate>
     <atom:link href="https://dzwnwyst4z-web.github.io/Scholar2Podcast/feed.xml" rel="self" type="application/rss+xml" />
     <itunes:author>Scholar2Podcast</itunes:author>
     <itunes:explicit>false</itunes:explicit>
@@ -32,6 +32,17 @@
       <itunes:author>Lewis, David</itunes:author>
       <itunes:explicit>false</itunes:explicit>
       <enclosure url="https://dzwnwyst4z-web.github.io/Scholar2Podcast/episodes/The%20Bible%2C%20Theology%2C%20and%20the%20Christ%20Figures%20in%20Film%20Session%201%20-%20Film%20Theory%20Part%202.mp3" length="24041443" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>The Bible, Theology, and the Christ Figures in Film Session 2: Jesus Films Part 1 continued</title>
+      <link>https://scholar.csl.edu/bible_film_christ_figures/4/</link>
+      <description>Dr. Lewis discusses the movies : "The Passion of Christ" and "Jesus of Nazareth" and how they depict Jesus and follow the biblical narrative.</description>
+      <content:encoded>Dr. Lewis discusses the movies : "The Passion of Christ" and "Jesus of Nazareth" and how they depict Jesus and follow the biblical narrative.</content:encoded>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">bb6003eb-742b-5fbe-b655-08f99ddcb0f6</guid>
+      <itunes:author>Lewis, David</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://dzwnwyst4z-web.github.io/Scholar2Podcast/episodes/The%20Bible%2C%20Theology%2C%20and%20the%20Christ%20Figures%20in%20Film%20Session%202%20-%20Jesus%20Films%20Part%201%20continued.mp3" length="26225734" type="audio/mpeg" />
     </item>
     <item>
       <title>The Bible, Theology, and the Christ Figures in Film Session 2: Jesus Films Part 1</title>
